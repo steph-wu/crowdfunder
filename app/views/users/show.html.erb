@@ -1,8 +1,15 @@
 <h1><%= @user.first_name%> <%= @user.last_name %></h1>
 
-<% @user.backed_projects.each do |project| %><br />
+<h2>Backed Projects </h2>
+  <% @user.backed_projects.each do |project| %><br />
     <%= project.title %> <br />
     <%= project.description %><br />
   <% end %>
 
-  
+<h2>Total Pledged:</h2>
+  <p> $<%= @user.pledges.sum(:dollar_amount) %></p>
+
+<h2>Projects</h2>
+  <% @user.projects.each do |project| %><br />
+  <%= project.title %><br /%>
+  <% end %>
