@@ -4,13 +4,17 @@
 <p>Goal: <%= number_to_currency(@project.goal) %></p>
 <p>Fundraising starts: <%= @project.start_date.strftime("%A %b %d %Y") %></p>
 <p>Deadline: <%= @project.end_date.strftime("%A %b %d %Y") %></p>
+<p>Time Remaining:
+<time class="project-days-left">
+  <%= icon('clock-o') %>
+  <%= "#{time_ago_in_words(@project.end_date)} #{(@project.end_date > Time.now.utc ) ? 'remaining' : 'past deadline'}" %></time></p>
 
 <% if @project.image.present? %>
   <%= image_tag @project.image %>
 <% end %>
 
 <h2>Rewards</h2>
-<% @project.rewards.each do |reward| %> 
+<% @project.rewards.each do |reward| %>
   <p><%= number_to_currency(reward.dollar_amount) %></p>
   <p><%= reward.description %></p>
 
