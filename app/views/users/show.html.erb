@@ -1,0 +1,8 @@
+<h1><%= @user.first_name%> <%= @user.last_name %></h1>
+
+<% @user.backed_projects.each do |project| %><br />
+    <%= project.title %> <br />
+    <%= project.description %><br />
+  <% end %>
+
+  
