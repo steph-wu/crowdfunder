@@ -14,5 +14,4 @@ class Reward < ActiveRecord::Base
   def quantity_available
     quantity - pledges.count
   end
-
 end

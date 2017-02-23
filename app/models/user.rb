@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 8 }, on: :create
   validates :password, confirmation: true, on: :create
   validates :password_confirmation, presence: true, on: :create
-
-  validates :email, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+  validates_presence_of :first_name, :last_name
 
   has_many :pledges
   has_many :rewards, through: :pledges

@@ -7,5 +7,6 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :rewards
   validates_presence_of :title, :description, :goal, :start_date, :end_date
   validates :goal, numericality: { greater_than: 0 }
-
+  validates_datetime :start_date, :on_or_after => :today
+  validates_datetime :end_date, :after => :start_date
 end
