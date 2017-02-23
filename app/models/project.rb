@@ -11,4 +11,6 @@ class Project < ActiveRecord::Base
   validates_datetime :end_date, :after => :start_date
 
   has_and_belongs_to_many :categories
+  belongs_to :owner, :class_name => 'User', :foreign_key => 'owner_id'
+  has_many :updates
 end

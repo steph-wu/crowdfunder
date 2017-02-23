@@ -59,6 +59,17 @@ ActiveRecord::Schema.define(version: 20170223202817) do
     t.integer  "quantity"
   end
 
+  create_table "updates", force: :cascade do |t|
+    t.date     "date"
+    t.text     "body"
+    t.string   "comments"
+    t.integer  "likes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "project_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
