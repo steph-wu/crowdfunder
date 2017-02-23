@@ -1,3 +1,5 @@
+<div class="container" data-project-id = "<%= @project.id %>">
+
 <% if logged_in? %>
   <% if current_user.backed_projects.include? @project %>
     <h3>You have already backed this project
@@ -35,3 +37,14 @@
   <% end %>
 
 <% end %>
+
+
+<div class="new_update">
+  <br>
+  <button id="updates">View Updates</button>
+  <p>
+    <%# update.body %>
+    <br>
+  </p>
+</div>
+</div>
