@@ -29,6 +29,8 @@ gem 'sorcery'
 # Dynamically create nested objects in forms
 gem "cocoon"
 
+# Date and time validation plugin for ActiveModel and Rails
+gem 'validates_timeliness', '~> 4.0'
 
 gem 'coffee-rails'
 # Scalable vector icon pack
