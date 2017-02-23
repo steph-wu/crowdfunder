@@ -9,4 +9,6 @@ class Project < ActiveRecord::Base
   validates :goal, numericality: { greater_than: 0 }
   validates_datetime :start_date, :on_or_after => :today
   validates_datetime :end_date, :after => :start_date
+
+  has_and_belongs_to_many :categories
 end
