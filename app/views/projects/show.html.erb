@@ -1,9 +1,20 @@
+<% if current_user.backed_projects.include? @project %>
+  <h3>You have already backed this project
+    <%= number_to_currency "#{@pledges.where("user_id = ?", current_user.id).sum(:dollar_amount)}"%>
+  </h3>
+<% end %>
+
 <h1><%= @project.title %></h1>
 
 <p><%= @project.description %></p>
 <p>Goal: <%= number_to_currency(@project.goal) %></p>
+<p>Funds Raised: <%= number_to_currency(@project.pledges.sum(:dollar_amount))%></p>
 <p>Fundraising starts: <%= @project.start_date.strftime("%A %b %d %Y") %></p>
 <p>Deadline: <%= @project.end_date.strftime("%A %b %d %Y") %></p>
+<p>Time Remaining:
+<time class="project-days-left">
+  <%= icon('clock-o') %>
+  <%= "#{time_ago_in_words(@project.end_date)} #{(@project.end_date > Time.now.utc ) ? 'remaining' : 'past deadline'}" %></time></p>
 
 <% if @project.image.present? %>
   <%= image_tag @project.image %>
