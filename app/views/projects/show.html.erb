@@ -1,7 +1,9 @@
-<% if current_user.backed_projects.include? @project %>
-  <h3>You have already backed this project
-    <%= number_to_currency "#{@pledges.where("user_id = ?", current_user.id).sum(:dollar_amount)}"%>
-  </h3>
+<% if logged_in? %>
+  <% if current_user.backed_projects.include? @project %>
+    <h3>You have already backed this project
+      <%= number_to_currency "#{@pledges.where("user_id = ?", current_user.id).sum(:dollar_amount)}"%>.
+    </h3>
+  <% end %>
 <% end %>
 
 <h1><%= @project.title %></h1>
