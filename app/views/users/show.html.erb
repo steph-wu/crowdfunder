@@ -2,12 +2,12 @@
 
 <h2>Backed Projects </h2>
   <% @user.backed_projects.each do |project| %><br />
-    <%= project.title %> <br />
+    <%= link_to project.title, project %> <br />
     <%= project.description %><br />
   <% end %>
 
 <h2>Total Pledged:</h2>
-  <p> $<%= @user.pledges.sum(:dollar_amount) %></p>
+  <p><%= number_to_currency(@user.pledges.sum(:dollar_amount)) %></p>
 
 <h2>Projects</h2>
   <% @user.projects.each do |project| %><br />
