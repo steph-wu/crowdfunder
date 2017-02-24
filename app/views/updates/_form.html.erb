@@ -1,11 +1,11 @@
 <%# if current_user %>
-<% form_for [@project, @update] do |f| %>
+<%= form_for [@project, @update] do |f| %>
   <div>
-    <%= f.label :date %>
-    <%= f.text_field :date %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
   </div>
   <div>
-    <%= f.label :body %>
+    <%= f.label :update %>
     <%= f.text_field :body %>
   </div>
   <div>
@@ -17,5 +17,3 @@
   <%# reward, reward.pledges.new %>
 
 <% end %>
-
-<%# question: :project? %>

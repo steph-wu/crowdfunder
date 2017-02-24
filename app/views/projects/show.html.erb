@@ -58,12 +58,20 @@
       <button id="create-update">Create Update</button>
     </p>
 
-    <div>
-      <%# render "updates/form" %>
-    </div>
-
     <div class="new-update-container">
     </div>
   </div>
-  </div>
+</div>
+
+<div>
+  <%# if @project.owner == current_user %>
+
+<div>
+  <%# render "comments/form" %>
+</div>
+
+<div id="comments_list">
+  <%# render "comments" %>
+</div>
+
 </div>

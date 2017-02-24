@@ -1,0 +1,12 @@
+// server will send back pure JS with erb filtered thorugh
+<% if @comment.errors.any? %>
+
+  $("#comment_errors").html("<%= (render(:partial => 'errors')) %>");
+
+<% else %>
+
+  $('#comments_list').prepend('<%= render @comment %>');
+  $('#comment_message').val("");
+//  $('#comment_errors').html("");
+
+<% end %>

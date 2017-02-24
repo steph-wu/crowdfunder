@@ -17,4 +17,6 @@ class User < ActiveRecord::Base
   has_many :updates, foreign_key: :owner_id
 
   has_one :image
+  has_many :comments
+
 end

@@ -6,17 +6,17 @@ $(document).ready(function() {
   var updater = $('.new-update-container');
     $('#show-updates').on('click', function(){
       var projectId = $('.container').attr('data-project-id');
-      console.log(projectId)
+      // console.log(projectId)
       $.ajax({
         url: '/projects/' + projectId + '/updates',
         method: 'GET',
         dataType: 'json'
       }).done(function(responseData) {
-        console.log(responseData);
+        // console.log(responseData);
         responseData = $.grep(responseData, function(x) {
           return x.project_id == projectId;
         });
-        console.log(responseData);
+        // console.log(responseData);
         $.each(responseData, function(index, project){
         container.append(
           '<h3> Updates: ',
@@ -26,7 +26,7 @@ $(document).ready(function() {
       });
     });
     });
-  });
+
   $('#create-update').on('click', function(e){
     var projectId = $('.container').attr('data-project-id');
     // console.log(projectId)
@@ -35,11 +35,11 @@ $(document).ready(function() {
       method: 'GET',
       dataType: 'html'
     }).done(function(responseData) {
-      console.log(responseData);
-      // updater.append(
+      // console.log(responseData);
+      updater.append(responseData);
+    });
+  });
 });
-});
-
 
 
 // - alternative method: look at URL, parse :project_id out with reg exp
