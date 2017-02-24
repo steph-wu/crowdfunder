@@ -11,13 +11,14 @@ class ProjectsController < ApplicationController
 
     if current_user
       @update = Update.new
+      @comment = Comment.new
     end
 
     respond_to do |format|
       format.html
       format.json
     end
-    
+
   end
 
   def new
