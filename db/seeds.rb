@@ -53,3 +53,10 @@ end
     dollar_amount: r.dollar_amount + rand(10)
   )
 end
+
+20.times do
+  project = Project.all.sample
+  Update.create!(
+    project: project,
+  )
+end
