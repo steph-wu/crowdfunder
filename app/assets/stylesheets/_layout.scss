@@ -51,10 +51,15 @@
 
 .grey {
   background-color: $lightergrey;
+  padding: 3em 0;
 }
 
 .full-width {
   width: 100%;
+}
+
+.centered {
+  text-align: center;
 }
 
 .centered-form {
