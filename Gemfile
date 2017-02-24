@@ -35,6 +35,9 @@ gem "cocoon"
 # Date and time validation plugin for ActiveModel and Rails
 gem 'validates_timeliness', '~> 4.0'
 
+# Config security
+gem 'figaro'
+
 gem 'coffee-rails'
 # Scalable vector icon pack
 # Read more: https://github.com/FortAwesome/font-awesome-sass
