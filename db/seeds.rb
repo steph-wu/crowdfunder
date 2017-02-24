@@ -22,8 +22,8 @@ end
     title: Faker::App.name,
     description: Faker::Lorem.paragraph,
     goal: rand(100000),
-    start_date: Time.now.utc + rand(5).days,
-    end_date: Time.now.utc + rand(5..30).days
+    start_date: Time.current + rand(5).days,
+    end_date: Time.current + rand(5..30).days
   )
  5.times do
    p.rewards.create!(
@@ -60,3 +60,12 @@ end
     project: project,
   )
 end
+
+User.create(first_name: "Effy", last_name: "Min", email: "effymin@gmail.com",
+    password: "testtest", password_confirmation: "testtest" )
+
+# 
+# Project.create(title: "climbing gym", end_date: Time.current, goal: 100000, description: "This is a serious
+#     project", owner_id: 1)
+#
+# Update.create(body: "I am an update!", project_id: 1)
