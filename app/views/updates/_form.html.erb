@@ -1,5 +1,4 @@
 <%# if current_user %>
-
 <% form_for [@project, @update] do |f| %>
   <div>
     <%= f.label :date %>
@@ -15,6 +14,7 @@
 
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <%# f.hidden_field :project_id, :value => @project.id %>
+  <%# reward, reward.pledges.new %>
 
 <% end %>
 

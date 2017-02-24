@@ -6,13 +6,13 @@ $(document).ready(function() {
   var updater = $('.new-update-container');
     $('#show-updates').on('click', function(){
       var projectId = $('.container').attr('data-project-id');
-      // console.log(projectId)
+      console.log(projectId)
       $.ajax({
         url: '/projects/' + projectId + '/updates',
         method: 'GET',
         dataType: 'json'
       }).done(function(responseData) {
-        // console.log(responseData);
+        console.log(responseData);
         responseData = $.grep(responseData, function(x) {
           return x.project_id == projectId;
         });
