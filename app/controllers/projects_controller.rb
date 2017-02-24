@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
       format.html
       format.json
     end
-    
+
   end
 
   def new
@@ -34,6 +34,12 @@ class ProjectsController < ApplicationController
     else
       render :new
     end
+   end
+
+   def destroy
+     @project = Project.find(params[:id])
+     project.destroy
+     redirect_to projects_url
    end
 
   private
