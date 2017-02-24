@@ -23,10 +23,16 @@ $(document).ready(function() {
           'Project ID: ' + project.project_id + '</li><br>',
           'User ID: ' + project.user_id + '</li><br>',
           'Update Message: ' + project.body + '</li><br>');
+      }).fail(function(){
+        alert("U FAIL LOL");
       });
+    });
     });
   });
 });
+
+
+
 //   $('#create-update').on('click', function(){
 //     var projectId = $('.container').attr('data-project-id')
 //     // console.log(projectId)
