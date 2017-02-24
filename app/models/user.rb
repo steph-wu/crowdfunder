@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+    dragonfly_accessor :image
 
   authenticates_with_sorcery!
 
@@ -14,4 +15,6 @@ class User < ActiveRecord::Base
 
   has_many :projects, foreign_key: :owner_id
   has_many :updates, foreign_key: :owner_id
+
+  has_one :image
 end
