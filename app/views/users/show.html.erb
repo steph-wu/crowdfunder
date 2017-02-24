@@ -1,26 +1,43 @@
-<hr>
+<section class="grey">
+
+  <div class="profile-image">
+    <% if @user.image %>
+      <%= image_tag @user.image.url if @user.image_stored? %>
+    <% else %>
+      <%= image_tag ActionController::Base.helpers.asset_path("default.jpg") %>
+    <% end %>
+  </div>
+
+  <h1 class="centered">Hey there <span><%= @user.first_name%>!</span></h1>
+</section>
 
 <section class="container">
 
-  <%= image_tag @user.image.url if @user.image_stored? %>
+  <% if @user.backed_projects.any? %>
 
-  <h1>Hey there <span><%= @user.first_name%>!</span></h1>
-
-  <h3>Backed Projects </h3>
+    <h3>Backed Projects </h3>
     <h4> You have backed <span><%=@user.backed_projects.count %></span> projects.</h4>
 
-      <% @user.backed_projects.each do |project| %><br />
-        <div class="backed-project">
-          <img src="<%= project.image %>"><br />
-          <p>
-            <%= link_to project.title, project %> <br />
-            <%= project.description %>
-          </p>
-        </div>
-      <% end %>
+    <% @user.backed_projects.each do |project| %><br />
+      <div class="backed-project">
+        <img src="<%= project.image %>"><br />
+        <p>
+          <%= link_to project.title, project %> <br />
+          <%= project.description %>
+        </p>
+      </div>
+    <% end %>
+
+    <h3>Total Pledged: <span><%= number_to_currency(@user.pledges.sum(:dollar_amount)) %></span></h3>
+
+  <% else %>
+
+    <h2 class="centered">You haven't backed any projects! Let's change that!</h2>
+    <h3 class="centered"><%= link_to 'Discover projects', projects_url %>.</h3>
+
+  <% end %>
 
   <div style="clear: both;"></div>
-  <h2>Total Pledged: <span><%= number_to_currency(@user.pledges.sum(:dollar_amount)) %></span></h2>
 
 </section>
 

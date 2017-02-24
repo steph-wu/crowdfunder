@@ -19,9 +19,13 @@ class Project < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where(["title LIKE ?","%#{search}%"])
+      categories = Category.where("category ILIKE ?", "#{search}")
+      projects_from_categories = categories.map(&:projects).flatten
+
+      projects_found_by_keyword = Project.where(["title ILIKE ? or description ILIKE ?","%#{search}%","%#{search}%"])
+      projects_from_categories + projects_found_by_keyword
     else
-      all
+      Project.all
     end
   end
 

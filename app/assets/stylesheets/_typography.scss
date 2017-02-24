@@ -24,3 +24,13 @@ a {
 .small-text {
   font-size: 0.8em;
 }
+
+.color-blue {
+  color: $blue;
+}
+
+.blue-underline {
+  color: black;
+  font-weight: 600;
+  border-bottom: 3px solid $blue;
+}

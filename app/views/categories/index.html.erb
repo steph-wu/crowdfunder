@@ -1,5 +1,11 @@
-<h1> All Categories </h1>
+<section class="container">
+  
+  <h3 class="color-blue">Categories </h3>
 
-<% @categories.each do |cat| %>
-<p> <%= link_to cat.category, cat %> </p>
-<% end %>
+  <hr><br />
+
+  <% @categories.each do |cat| %>
+  <h1 class="category-name"><%= link_to cat.category, cat %></h1>
+  <% end %><br />
+
+</section>

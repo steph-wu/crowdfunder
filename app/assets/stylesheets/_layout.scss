@@ -39,14 +39,27 @@
   padding: 2em 0 6em 0;
 }
 
-.grey {
-  background-color: $lightergrey;
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.project {
-  display: inline-block;
-  width: 30%;
+.flex-child {
+  flex-basis: 30%;
   margin: 1em;
+}
+
+.grey {
+  background-color: $lightergrey;
+  padding: 3em 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.centered {
+  text-align: center;
 }
 
 .centered-form {

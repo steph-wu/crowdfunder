@@ -3,14 +3,42 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .project {
-  text-align: center;
+  border: 1px solid $lightgrey;
+  -moz-border-radius: 0 0 0.5em 0.5em;
+  -webkit-border-radius: 0 0 0.5em 0.5em;
+  -khtml-border-radius: 0 0 0.5em 0.5em;
+  border-radius: 0 0 0.5em 0.5em;
+  text-align: left;
   margin-bottom: 1rem;
+
+  a, a:visited {
+    color: black;
+  }
+
+  h1 {
+    font-size: 1em;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 0.75em;
+    margin: 0;
+  }
+}
+
+.project-description {
+  padding: 1em;
+}
+
+.project-goal {
+  font-weight: bold;
+  font-size: 0.75em;
+  float: right;
 }
 
 .project-link {
   display: block;
   text-decoration: none;
-  color: $blue;
 }
 
 .project-title {
@@ -19,4 +47,9 @@
 
 .project-days-left {
   font-size: 0.75em;
+}
+
+input {
+  width: auto;
+  border: 1px solid $lightgrey;
 }
