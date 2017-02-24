@@ -20,10 +20,10 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to project_url(@project.id), notice: 'Comment added!'}
-        format.json { render json: @comments }
+        format.js {} # server will look at comment/create.js.erb
       else
         format.html {render 'project/show', notice: 'Zere was an error!'}
-        format.json { render json: @comments }
+        format.js {}
     end
 
   def destroy

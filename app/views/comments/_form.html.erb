@@ -1,0 +1,28 @@
+<%# if current_user  %>
+
+    <h4>New Comment</h4>
+
+
+    <%= form_for [@project, @comment] do |f| %>
+
+        <div id="comment_errors">
+          <%# render :partial => "comments/errors" %>
+        </div>
+
+        <div class="field" >
+          <%= f.text_area :message %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+
+    <% end %>
+
+<% else %>
+
+    <p>Please <%= link_to "log in", login_path %> to add a comment</p>
+
+<% end %>
