@@ -4,14 +4,16 @@
 
 $(document).ready(function() {
   $("#new_comment").on('keypress', function(e){
+    // console.log(e)
       if(e.keyCode==13){
+        // console.log(e)
           $.ajax({
               url: $(this).attr('action'),
               type: $(this).attr('method'),
               dataType: 'script',
               data: $(this).serialize(),
           });
+          console.log(this)
       }
   });
-});
 });

@@ -3,7 +3,7 @@
     <h4>New Comment</h4>
 
 
-    <% form_for [@project, @comment] do |f| %>
+    <%= form_for [@project, @comment] do |f| %>
 
         <div id="comment_errors">
           <%# render :partial => "comments/errors" %>

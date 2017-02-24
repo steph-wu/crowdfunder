@@ -4,7 +4,7 @@
     <br>
 
     <% if comment.user != nil  %>
-        <em> by <%= comment.user.email %></em>
-        Added on: <%= comment.created_at %>
+        <p> by <%= comment.user.first_name %></p>
+        <p>Added on: <%= comment.created_at %></p>
     <% end %>
 </div>

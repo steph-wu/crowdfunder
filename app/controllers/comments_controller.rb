@@ -5,16 +5,15 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
-  def index
-    @comments = Comment.all
-  end
+  # def index
+  #   @comments = Comment.all
+  # end
 
   def show
-
   end
 
   def create
-    @comment = @project.comment.build(comment_params)
+    @comment = @project.comments.build(comment_params)
     @comment.user = current_user
 
     respond_to do |format|
@@ -24,20 +23,21 @@ class CommentsController < ApplicationController
       else
         format.html {render 'project/show', notice: 'Zere was an error!'}
         format.js {}
+      end
     end
+  end
 
   def destroy
   end
 
-end
 
 private
 
   def comment_params
-    pararms.require(:comment).permit(:message)
+    params.require(:comment).permit(:message)
   end
 
-  def load_proect
+  def load_project
     @project = Project.find(params[:project_id])
   end
 
