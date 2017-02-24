@@ -1,5 +1,7 @@
 class UpdatesController < ApplicationController
 
+  before_action :load_project
+
     def index
       @updates = Update.all
       # @updates = Updates.find(params[:id])

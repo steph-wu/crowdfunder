@@ -14,4 +14,6 @@ class User < ActiveRecord::Base
 
   has_many :projects, foreign_key: :owner_id
   has_many :updates, foreign_key: :owner_id
+
+  has_many :comments
 end
