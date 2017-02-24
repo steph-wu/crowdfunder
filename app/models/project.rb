@@ -1,4 +1,6 @@
 class Project < ActiveRecord::Base
+  dragonfly_accessor :image
+
   has_many :rewards
   has_many :pledges, through: :rewards
   has_many :backers, through: :rewards

@@ -23,6 +23,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Image Uploader
+gem 'dragonfly', '~> 1.1.1'
+
 # Authentication and authorization
 gem 'sorcery'
 

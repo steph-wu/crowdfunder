@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     @project.rewards.build
+    @photo = Photo.new
   end
 
   def create
