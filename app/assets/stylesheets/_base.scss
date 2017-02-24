@@ -4,7 +4,9 @@
   box-sizing: inherit;
 }
 
-html {
+html,
+body {
+  height: 100%;
   box-sizing: border-box;
 }
 
@@ -29,9 +31,9 @@ hr {
   border: 0;
   height: 1px;
   background: $lightgrey;
-  margin: 0.25em 0;
+  margin: 0.5em 0;
 }
 
 p {
-  font-size: 13px;
+  font-size: 1em;
 }

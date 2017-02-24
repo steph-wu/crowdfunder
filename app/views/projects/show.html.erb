@@ -44,13 +44,26 @@
 
 <% end %>
 
+<div class="new-updates">
+  <div class="project-updates">
+    <p>
+      <button id="show-updates">View Updates</button>
+      <%# <span class="count">0 new</span> %>
+    </p>
 
-<div class="new_update">
-  <br>
-  <button id="updates">View Updates</button>
-  <p>
-    <%# update.body %>
-    <br>
-  </p>
-</div>
+    <div class="update-container">
+    </div>
+
+    <p>
+      <button id="create-update">Create Update</button>
+    </p>
+
+    <div>
+      <%# render "updates/form" %>
+    </div>
+
+    <div class="new-update-container">
+    </div>
+  </div>
+  </div>
 </div>

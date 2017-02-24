@@ -7,6 +7,19 @@
 </section>
 
 <div class="feature-project">
+  <h2>Search</h2>
+  <hr>
+
+  <p></p>
+  
+  <center>
+  <%= form_tag projects_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+  <% end %></center>
+
+  <p></p>
+
   <h2>Featured Project</h2>
   <hr>
 </div>
