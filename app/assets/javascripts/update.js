@@ -12,9 +12,12 @@ $(document).ready(function() {
         method: 'GET',
         dataType: 'json'
       }).done(function(responseData) {
+        // console.log(responseData);
+        responseData = $.grep(responseData, function(x) {
+          return x.project_id == projectId;
+        });
         console.log(responseData);
         $.each(responseData, function(index, project){
-          console.log(index, project);
         container.append(
           '<h3> Updates: ',
           'Project ID: ' + project.project_id + '</li><br>',

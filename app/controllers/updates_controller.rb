@@ -2,6 +2,7 @@ class UpdatesController < ApplicationController
 
     def index
       @updates = Update.all
+      # @updates = Updates.find(params[:id])
       # @updates = Update.find_by_project_id(params[:project_id])
             # note: just show top ten, filter specific project to render
       respond_to do |format|
