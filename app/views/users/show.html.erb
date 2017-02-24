@@ -2,6 +2,8 @@
 
 <section class="container">
 
+  <%= image_tag @user.image.url if @user.image_stored? %>
+
   <h1>Hey there <span><%= @user.first_name%>!</span></h1>
 
   <h3>Backed Projects </h3>
