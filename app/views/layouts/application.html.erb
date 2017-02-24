@@ -14,10 +14,9 @@
 
   <body>
     <header class="site-header">
-      <h1 class="logo"><i class="fa fa-diamond" aria-hidden="true"></i> crowdfunder.</h1>
+      <h1 class="logo"><i class="fa fa-diamond" aria-hidden="true"></i> <%= link_to "crowdfunder.", root_path %></h1>
 
       <nav class="site-nav">
-        <%= link_to "Home", root_path %>
         <% if current_user %>
           <%= link_to "Profile", current_user %>
           <%= link_to "Logout", :logout, method: :post %>
