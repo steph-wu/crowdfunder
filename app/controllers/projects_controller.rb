@@ -2,8 +2,7 @@ class ProjectsController < ApplicationController
   before_action :require_login, only: [:new, :create]
 
   def index
-    @projects = Project.all
-    @projects = @projects.order(:end_date)
+    @projects = Project.search(params[:search ])
   end
 
   def show
@@ -24,6 +23,7 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     @project.rewards.build
+    @photo = Photo.new
   end
 
   def create
