@@ -1,6 +1,16 @@
-<h1> All Projects under the <%= @category.category %> category </h1>
+<section class="container">
 
-<h2> <% @category.projects.each do |project| %>
-    <p> <%= link_to project.title, project %> </p>
-    <p> <%= project.description %> </p>
-    <% end %>
+  <h2>Explore <span class="blue-underline"><%= @category.projects.count %></span> projects under <%= @category.category %></h2>
+
+  <% @category.projects.each do |project| %>
+    <article class="project">
+      <p> <%= link_to project.title, project %> </p>
+      <% if project.image %>
+        <%= image_tag project.image.url if project.image_stored? %>
+      <% else %>
+        <%= image_tag ActionController::Base.helpers.asset_path("default.jpg") %>
+      <% end %>
+      <p> <%= project.description %> </p>
+    </article>
+  <% end %>
+</section>
